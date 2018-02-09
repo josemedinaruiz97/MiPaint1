@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements ColorPickerDialog
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.mUndo) {
+            Log.v("xyxyxy","hola");
             vistaPintada.undo();
             return true;
         }

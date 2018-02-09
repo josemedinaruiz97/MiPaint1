@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -196,11 +197,11 @@ public class VistaPintada extends View {
     public void undo(){
         if(misFiguras.size()!=0) {
             misFiguras.remove(misFiguras.size() - 1);
-            canvasFondo=new Canvas();
-            pincel.setColor(fondo);
+            canvasFondo.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+            /*pincel.setColor(fondo);
             pincel.setAntiAlias(true);
             pincel.setStyle(Paint.Style.FILL);
-            canvasFondo.drawRect(0, 0, getWidth(), getHeight(),pincel);
+            canvasFondo.drawRect(0, 0, getWidth(), getHeight(),pincel);*/
             for (Object miFigura:misFiguras) {
                 if(miFigura.getClass()== Circulo.class){
                     Circulo c=(Circulo)miFigura;
